@@ -4,9 +4,7 @@ import requests
 import RPi.GPIO as GPIO
 from RPLCD import CharLCD
 
-lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[33, 31, 29, 23], 
-		numbering_mode=GPIO.BOARD)
-
+lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[33, 31, 29, 23], numbering_mode=GPIO.BOARD)
 
 def writeToLCD( message, lineNumber, sleepSeconds ):
 	if ( lineNumber == 1 ):
@@ -17,7 +15,7 @@ def writeToLCD( message, lineNumber, sleepSeconds ):
 	lcd.write_string(message)
 	time.sleep(sleepSeconds)
 
-	return;
+	return
 
 try:
 	while True:
